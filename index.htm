@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Andreza & Fernando | 19.06.2027</title>
+
+  <style>
+    :root {
+      --azul: #8FA8BF;
+      --azul-escuro: #4F7193;
+      --dourado: #C9A45C;
+      --verde: #60775A;
+      --branco: #FFFDF9;
+      --texto: #40566B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: var(--branco);
+      color: var(--texto);
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+      background:
+        linear-gradient(rgba(255,253,249,0.88), rgba(255,253,249,0.94));
+    }
+
+    .monograma {
+      width: min(90%, 650px);
+      max-height: 60vh;
+      object-fit: contain;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 7vw, 58px);
+      font-weight: normal;
+      color: var(--azul-escuro);
+      margin-bottom: 12px;
+    }
+
+    .data {
+      color: var(--dourado);
