@@ -2,18 +2,20 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Andreza & Fernando | 19.06.2027</title>
 
   <style>
     :root {
-      --azul: #8FA8BF;
-      --azul-escuro: #4F7193;
-      --dourado: #C9A45C;
-      --verde: #60775A;
-      --branco: #FFFDF9;
-      --texto: #40566B;
+      --azul: #9bb2c8;
+      --azul-escuro: #526f8b;
+      --dourado: #c9a45c;
+      --verde: #65775f;
+      --branco: #fffdf9;
+      --creme: #f8f5ef;
+      --texto: #405466;
     }
 
     * {
@@ -22,37 +24,246 @@
       padding: 0;
     }
 
-    body {
-      font-family: Georgia, serif;
-      background: var(--branco);
-      color: var(--texto);
-      text-align: center;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .hero {
-      min-height: 100vh;
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--branco);
+      color: var(--texto);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    /* MENU */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 253, 249, 0.96);
+      border-bottom: 1px solid rgba(201, 164, 92, 0.35);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      min-height: 68px;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 30px 20px;
+      gap: 28px;
+      flex-wrap: wrap;
+      padding: 12px 0;
+    }
+
+    .nav-inner a {
+      font-size: 14px;
+      color: var(--azul-escuro);
+      transition: 0.2s;
+    }
+
+    .nav-inner a:hover {
+      color: var(--dourado);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
       background:
-        linear-gradient(rgba(255,253,249,0.88), rgba(255,253,249,0.94));
+        linear-gradient(
+          rgba(155, 178, 200, 0.22),
+          rgba(255, 253, 249, 0.92)
+        );
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "♡";
+      position: absolute;
+      color: rgba(201, 164, 92, 0.22);
+      font-size: 180px;
+    }
+
+    .hero::before {
+      left: -40px;
+      top: 60px;
+    }
+
+    .hero::after {
+      right: -40px;
+      bottom: 20px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
     }
 
     .monograma {
-      width: min(90%, 650px);
-      max-height: 60vh;
+      width: min(260px, 65vw);
+      max-height: 260px;
       object-fit: contain;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: clamp(32px, 7vw, 58px);
+    .save-date {
+      color: var(--dourado);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 76px);
       font-weight: normal;
       color: var(--azul-escuro);
       margin-bottom: 12px;
     }
 
-    .data {
+    .hero h1 span {
       color: var(--dourado);
+    }
+
+    .hero-date {
+      font-size: 22px;
+      color: var(--verde);
+    }
+
+    .hero-subtitle {
+      margin-top: 20px;
+      font-size: 17px;
+      font-style: italic;
+    }
+
+    .heart {
+      color: var(--dourado);
+      font-size: 24px;
+      margin: 15px 0;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 80px 0;
+    }
+
+    section:nth-child(even) {
+      background: var(--creme);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title .small {
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      color: var(--azul-escuro);
+      font-weight: normal;
+      margin-top: 5px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 12px auto 0;
+    }
+
+    /* HISTÓRIA */
+
+    .story {
+      max-width: 780px;
+      margin: auto;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .story p {
+      margin-bottom: 18px;
+    }
+
+    .story-highlight {
+      color: var(--verde);
+      font-size: 21px;
+      font-style: italic;
+      margin: 35px 0;
+    }
+
+    /* DATA */
+
+    .date-card {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      padding: 45px 25px;
+      border: 1px solid rgba(201, 164, 92, 0.45);
+      background: rgba(255,255,255,0.55);
+    }
+
+    .date-number {
+      font-size: clamp(50px, 9vw, 90px);
+      color: var(--azul-escuro);
+      line-height: 1;
+    }
+
+    .date-month {
+      font-size: 25px;
+      color: var(--dourado);
+      margin-top: 8px;
+    }
+
+    /* CONTAGEM */
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 700px;
+      margin: 35px auto 0;
+    }
+
+    .time-box {
+      background: white;
+      border: 1px solid rgba(201,164,92,0.35);
+      padding: 22px 10px;
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: 32px;
+      color: var(--azul-escuro);
+      font-weight: normal;
+    }
+
+    .time-box span {
+      display: block;
+      color: var(--verde);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing:
